@@ -1,0 +1,31 @@
+{
+  "name": "xml-docgen",
+  "version": "1.0.2",
+  "type": "module",
+  "description": "Converts XML strings into structured Markdown documentation by parsing the XML, extracting all nested paths and values, and formatting them into readable tables.",
+  "main": "xml-docgen.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alejandroluzuriaga/xml-docgen.git"
+  },
+  "keywords": [
+    "xml",
+    "parser",
+    "xmlParser",
+    "markdown",
+    "json"
+  ],
+  "author": "Alejandro Gonzalez Luzuriaga",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alejandroluzuriaga/xml-docgen/issues"
+  },
+  "homepage": "https://github.com/alejandroluzuriaga/xml-docgen#readme",
+  "dependencies": {
+    "xml-docgen": "file:",
+    "xml2js": "0.6.2"
+  }
+}

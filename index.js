@@ -1,37 +1,7 @@
-# xml-docgen
-
-**xml-docgen** is a lightweight utility library for transforming XML strings into structured Markdown documentation.
-
-It parses XML into JavaScript objects, recursively extracts key paths and values, and generates Markdown tables for clear, human-readable documentation.
-
----
-
-## Installation
-
-```bash
-npm install xml-docgen
-```
-
-## Methods
-
-| Method                              | Description                                                                 |
-|-------------------------------------|-----------------------------------------------------------------------------|
-| `xmlStringToJsObject(xmlString)`    | Parses an XML string into a JavaScript object using `xml2js` library.              |
-| `xmlToMarkdown(xmlString, schemaName?)` | Converts XML into Markdown documentation.              |
-| `extractObjectPaths(obj)`           | Recursively extracts all key paths and values from a nested object.        |
-| `generateMarkdownDoc(pairs, schemaName?)` | Generates a Markdown table from key-value pairs.                     |
-| `getFormattedDate(date)`            | Formats a JavaScript Date object as `YYYY_MM_DD`.                          |
-| `createFile(fileName, content)`     | Creates a file with the given name and writes content into it.             |
-
----
-
-## 🧪 Example Usage
-
-```js
 import fs from 'fs';
 import { methods } from './xml-docgen.js';
 
-// XML Example
+//Xml examples
 const xmlExample = `
 <company id="001" name="TechCorp">
   <departments>
@@ -63,11 +33,10 @@ const xmlExample = `
     </project>
   </projects>
   <metadata created="2022-01-01" updated="2023-12-31"/>
-</company>
-`;
+</company>`;
 
 (async () => {
-  const operator = "" || 'Test'; // Insert operator name or ID
+  const operator = ""; // Insert operator name or ID
   const currentDate = methods.getFormattedDate(new Date());
 
   // Parse XML to JS object
