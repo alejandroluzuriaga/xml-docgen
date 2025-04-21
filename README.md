@@ -6,13 +6,15 @@ It parses XML into JavaScript objects, recursively extracts key paths and values
 
 ---
 
-## Installation
+Installation
+===============
 
 ```bash
 npm install xml-docgen
 ```
 
-## Methods
+Methods
+===============
 
 | Method                              | Description                                                                 |
 |-------------------------------------|-----------------------------------------------------------------------------|
@@ -25,7 +27,8 @@ npm install xml-docgen
 
 ---
 
-## 🧪 Example Usage
+Example usage
+===============
 
 ```js
 import fs from 'fs';
@@ -82,3 +85,16 @@ const xmlExample = `
   methods.createFile(`./${schemaName}Json_${operator}_${currentDate}.json`, JSON.stringify(json, null, 2));
   methods.createFile(`./${schemaName}Xml_${operator}_${currentDate}.md`, markdown);
 })();
+```
+Getting support
+===============
+
+Please, if you have a problem with the library, first make sure you read this
+README. If you read this far, thanks, you're good. Then, please make sure your
+problem really is with `xml-docgen`. It is? Okay, then I'll look at it. Send me an email :)
+
+But if you know you really found a bug, feel free to open an issue instead.
+
+**Feel free to fork, extend, and contribute!**
+
+Alex - *2025*
