@@ -40,12 +40,11 @@ const xmlExample = `
 
   // Parse XML to JS object
   const json = await methods.xmlStringToJsObject(xmlExample);
-  const schemaName = Object.keys(json)[0] || 'Schema';
+  const root = Object.keys(json)[0] || 'Root';
 
   // Generate Markdown doc
   const markdown = await methods.xmlToMarkdown(xmlExample, schemaName);
 
-  // Write files
-  methods.createFile(`./${schemaName}Json_${operator}_${currentDate}.json`, JSON.stringify(json, null, 2));
+  // Create markdown file
   methods.createFile(`./${schemaName}Xml_${operator}_${currentDate}.md`, markdown);
 })();
