@@ -1,4 +1,3 @@
-import fs from 'fs';
 import { methods } from './xml-docgen.js';
 
 //Xml examples
