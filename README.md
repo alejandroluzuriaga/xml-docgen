@@ -31,7 +31,6 @@ Example usage
 ===============
 
 ```js
-import fs from 'fs';
 import { methods } from './xml-docgen.js';
 
 // XML Example
@@ -81,11 +80,13 @@ const xmlExample = `
   // Generate Markdown doc
   const markdown = await methods.xmlToMarkdown(xmlExample, schemaName);
 
-  // Write files
-  methods.createFile(`./${schemaName}Json_${operator}_${currentDate}.json`, JSON.stringify(json, null, 2));
+  // Create markdown file
   methods.createFile(`./${schemaName}Xml_${operator}_${currentDate}.md`, markdown);
 })();
+
 ```
+***This example was added in 'example.js' file inside library's folder.***
+
 Getting support
 ===============
 
