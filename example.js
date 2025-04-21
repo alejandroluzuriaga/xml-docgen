@@ -41,7 +41,6 @@ const xmlExample = `
 
   // Parse XML to JS object
   const json = await methods.xmlStringToJsObject(xmlExample);
-  console.log(json);
   const schemaName = Object.keys(json)[0] || 'Schema';
 
   // Generate Markdown doc
