@@ -43,8 +43,8 @@ const xmlExample = `
   const root = Object.keys(json)[0] || 'Root';
 
   // Generate Markdown doc
-  const markdown = await methods.xmlToMarkdown(xmlExample, schemaName);
+  const markdown = await methods.xmlToMarkdown(xmlExample, root);
 
   // Create markdown file
-  methods.createFile(`./${schemaName}Xml_${operator}_${currentDate}.md`, markdown);
+  methods.createFile(`./${root}Xml_${operator}_${currentDate}.md`, markdown);
 })();
