@@ -42,7 +42,7 @@ const xmlExample = `
   const json = await methods.xmlStringToJsObject(xmlExample);
   const root = Object.keys(json)[0] || 'Root';
 
-  // Extract keys and values from object. E.g keyValue = [[company.id, 0123], [company.name, testName], ...]
+  // Extract keys and values from object. E.g keyValue = [['company.id', '0123'], ['company.name', 'testName'], ...]
   const keyValue = methods.extractObjectPaths(json, root);
 
   // Generate Markdown file with 2 columns (key & value)

@@ -33,7 +33,7 @@ Example usage
 ```js
 import { methods } from './xml-docgen.js';
 
-//Xml examples
+//Xml example
 const xmlExample = `
 <company id="001" name="TechCorp">
   <departments>
@@ -71,17 +71,17 @@ const xmlExample = `
   const operator = ""; // Insert operator name or ID
   const currentDate = methods.getFormattedDate(new Date());
 
-  // Parse XML to JS object
+  // Parse XML to JS object (using xml2js library)
   const json = await methods.xmlStringToJsObject(xmlExample);
   const root = Object.keys(json)[0] || 'Root';
 
-  // Extract keys and values from object. E.g [[], []]
+  // Extract keys and values from object. E.g keyValue = [['company.id', '0123'], ['company.name', 'testName'], ...]
   const keyValue = methods.extractObjectPaths(json, root);
 
-  // Generate Markdown doc
+  // Generate Markdown file with 2 columns (key & value)
   const markdown = await methods.xmlToMarkdown(xmlExample, root);
 
-  // Create markdown file
+  // Create file
   methods.createFile(`./${root}Xml_${operator}_${currentDate}.md`, markdown);
 })();
 
