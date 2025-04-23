@@ -2,7 +2,7 @@
 
 **xml-docgen** is a lightweight utility library for transforming XML strings into structured Markdown documentation.
 
-It parses XML into JavaScript objects, recursively extracts key paths and values, and generates Markdown tables for clear, human-readable documentation.
+It parses XML into JavaScript objects, recursively extracts key paths and values for nested objects, and generates Markdown tables for clear and human-readable documentation.
 
 ---
 
@@ -19,7 +19,7 @@ Methods
 | Method                              | Description                                                                 |
 |-------------------------------------|-----------------------------------------------------------------------------|
 | `xmlStringToJsObject(xmlString)`    | Parses an XML string into a JavaScript object using `xml2js` library.              |
-| `xmlToMarkdown(xmlString, schemaName?)` | Converts XML into Markdown documentation.              |
+| `xmlToMarkdown(xmlString, schemaName?)` | Converts XML string into Markdown documentation.              |
 | `extractObjectPaths(obj)`           | Recursively extracts all key paths and values from a nested object.        |
 | `generateMarkdownDoc(pairs, schemaName?)` | Generates a Markdown table from key-value pairs.                     |
 | `getFormattedDate(date)`            | Formats a JavaScript Date object as `YYYY_MM_DD`.                          |
@@ -33,7 +33,7 @@ Example usage
 ```js
 import { methods } from './xml-docgen.js';
 
-// XML Example
+//Xml examples
 const xmlExample = `
 <company id="001" name="TechCorp">
   <departments>
@@ -65,27 +65,28 @@ const xmlExample = `
     </project>
   </projects>
   <metadata created="2022-01-01" updated="2023-12-31"/>
-</company>
-`;
+</company>`;
 
 (async () => {
-  const operator = "" || 'Test'; // Insert operator name or ID
+  const operator = ""; // Insert operator name or ID
   const currentDate = methods.getFormattedDate(new Date());
 
   // Parse XML to JS object
   const json = await methods.xmlStringToJsObject(xmlExample);
-  console.log(json);
-  const schemaName = Object.keys(json)[0] || 'Schema';
+  const root = Object.keys(json)[0] || 'Root';
+
+  // Extract keys and values from object. E.g [[], []]
+  const keyValue = methods.extractObjectPaths(json, root);
 
   // Generate Markdown doc
-  const markdown = await methods.xmlToMarkdown(xmlExample, schemaName);
+  const markdown = await methods.xmlToMarkdown(xmlExample, root);
 
   // Create markdown file
-  methods.createFile(`./${schemaName}Xml_${operator}_${currentDate}.md`, markdown);
+  methods.createFile(`./${root}Xml_${operator}_${currentDate}.md`, markdown);
 })();
 
 ```
-***This example was added in 'example.js' file inside library's folder.***
+***This example was added in 'example.js' file.***
 
 Getting support
 ===============

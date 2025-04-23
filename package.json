@@ -1,6 +1,6 @@
 {
   "name": "xml-docgen",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "type": "module",
   "description": "Converts XML strings into structured Markdown documentation by parsing the XML, extracting all nested paths and values, and formatting them into readable tables.",
   "main": "xml-docgen.js",
@@ -25,6 +25,6 @@
   },
   "homepage": "https://github.com/alejandroluzuriaga/xml-docgen#readme",
   "dependencies": {
-    "xml2js": "0.6.2"
+    "xml2js": "^0.6.2"
   }
 }
